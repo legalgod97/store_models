@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from datetime import datetime
 
+
 engine = create_engine("postgresql+psycopg2://postgres:legalisperfect010197@localhost:5432/shop")
 
 Base = declarative_base()
@@ -57,3 +58,5 @@ class Order(Base):
     address = Column(String(200), nullable=False)
     phone_number = Column(String(50), nullable=False)
     status = Column(String(50), default='Pending')
+
+metadata = Base.metadata
